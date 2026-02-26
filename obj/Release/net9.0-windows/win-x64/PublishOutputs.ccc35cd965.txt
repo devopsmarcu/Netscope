@@ -1,6 +1,0 @@
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\NetScope.exe
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\CheckMacPolicy.ps1
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\NetScope.dll
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\NetScope.deps.json
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\NetScope.runtimeconfig.json
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Release\net9.0-windows\win-x64\publish\NetScope.pdb

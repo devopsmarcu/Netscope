@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetScope")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b575cc99af4fd6bbda2303ac39fd75bde82734c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+08945c271cd54c8b1fafc2de7efeb80731e87690")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetScope")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetScope")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
