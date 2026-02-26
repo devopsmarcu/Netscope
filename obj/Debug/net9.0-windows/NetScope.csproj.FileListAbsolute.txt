@@ -1,3 +1,4 @@
+Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Debug\net9.0-windows\CheckMacPolicy.ps1
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Debug\net9.0-windows\NetScope.exe
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Debug\net9.0-windows\NetScope.deps.json
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Debug\net9.0-windows\NetScope.runtimeconfig.json
@@ -22,4 +23,3 @@ Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\obj\Debug\net9.0-windows\refint\
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\obj\Debug\net9.0-windows\NetScope.pdb
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\obj\Debug\net9.0-windows\NetScope.genruntimeconfig.cache
 Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\obj\Debug\net9.0-windows\ref\NetScope.dll
-Z:\Técnicos\Marcus\Desenvolvimento\C#\Netscope\bin\Debug\net9.0-windows\CheckMacPolicy.ps1

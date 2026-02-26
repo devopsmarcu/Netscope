@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Management.Automation;
+
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -29,7 +29,7 @@ namespace NetScope.Services
                 return "---------------------------------------------\nErro: Nenhum servidor DHCP configurado ou ativo.\nPor favor, cadastre os servidores nas Configurações.\n---------------------------------------------";
             }
 
-            string result = "";
+
             string serversArray = string.Join("','", servers.Select(s => s.Address));
 
             string script = "";

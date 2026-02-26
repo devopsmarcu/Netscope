@@ -4,8 +4,11 @@ param(
   [Parameter(Mandatory=$true)]
   [string]$MacAddress,
 
-  [string]$DhcpServer = "dcp-santacasa.santacasaba.local",
-  [string]$PolicyName = "FILTRO DE MACS"
+  [Parameter(Mandatory=$true)]
+  [string]$DhcpServer,
+  
+  [Parameter(Mandatory=$true)]
+  [string]$PolicyName
 )
 
 Set-StrictMode -Version Latest

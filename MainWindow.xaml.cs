@@ -99,7 +99,7 @@ namespace NetScope
 
             btnSearch.IsEnabled = false;
             txtResult.Text = "Consultando...";
-            txtResult.Refresh();
+
 
             try
             {
