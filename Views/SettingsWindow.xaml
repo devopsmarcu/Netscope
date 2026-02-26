@@ -1,0 +1,190 @@
+<Window x:Class="NetScope.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:NetScope.ViewModels"
+        Title="{DynamicResource SettingsTitle}" 
+        Height="500" Width="550"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#F5F5F5">
+    
+    <Window.DataContext>
+        <vm:SettingsViewModel/>
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#333333"/>
+        </Style>
+        <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#0078D4"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#005A9E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SecondaryButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="#E1E1E1"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="15,8"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#CCCCCC"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource SettingsTitle}" FontSize="18" FontWeight="Bold" Foreground="#0078D4" Margin="0,0,0,15"/>
+
+        <TabControl Grid.Row="1" Background="Transparent" BorderThickness="0,1,0,0">
+            <TabItem Header="{DynamicResource TabServers}">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{DynamicResource NewServerLabel}" FontSize="11" Margin="0,0,0,5"/>
+                            <TextBox Height="30" VerticalContentAlignment="Center" Text="{Binding NewServerAddress, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Content="{DynamicResource BtnAdd}" Style="{StaticResource PrimaryButtonStyle}" Margin="10,20,0,0" Height="30" Command="{Binding AddServerCommand}"/>
+                    </Grid>
+                    <Border Grid.Row="1" Background="White" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+                        <DataGrid ItemsSource="{Binding Servers}" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="0" SelectionMode="Single" RowHeaderWidth="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{DynamicResource HeaderAddress}" Binding="{Binding Address}" Width="*"/>
+                                <DataGridCheckBoxColumn Header="{DynamicResource HeaderActive}" Binding="{Binding IsActive}" Width="50"/>
+                                <DataGridTemplateColumn Width="40">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="❌" Background="Transparent" BorderThickness="0" Foreground="Red" Cursor="Hand" 
+                                                    Command="{Binding DataContext.DeleteServerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{DynamicResource TabPolicies}">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="{DynamicResource NewPolicyLabel}" FontSize="11" Margin="0,0,0,5"/>
+                            <TextBox Height="30" VerticalContentAlignment="Center" Text="{Binding NewPolicyName, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <Button Grid.Column="1" Content="{DynamicResource BtnAdd}" Style="{StaticResource PrimaryButtonStyle}" Margin="10,20,0,0" Height="30" Command="{Binding AddPolicyCommand}"/>
+                    </Grid>
+                    <Border Grid.Row="1" Background="White" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+                        <DataGrid ItemsSource="{Binding Policies}" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="0" SelectionMode="Single" RowHeaderWidth="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{DynamicResource HeaderName}" Binding="{Binding Name}" Width="*"/>
+                                <DataGridCheckBoxColumn Header="{DynamicResource HeaderActive}" Binding="{Binding IsActive}" Width="50"/>
+                                <DataGridTemplateColumn Width="40">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="❌" Background="Transparent" BorderThickness="0" Foreground="Red" Cursor="Hand" 
+                                                    Command="{Binding DataContext.DeletePolicyCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="{DynamicResource TabScopes}">
+                <Grid Margin="0,15,0,0">
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Margin="0,0,0,10">
+                        <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="0,0,5,0">
+                            <TextBlock Text="{DynamicResource NewScopeIpLabel}" FontSize="11" Margin="0,0,0,5"/><TextBox Height="30" VerticalContentAlignment="Center" Text="{Binding NewScopeId, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                            <TextBlock Text="{DynamicResource NewScopeNameLabel}" FontSize="11" Margin="0,0,0,5"/><TextBox Height="30" VerticalContentAlignment="Center" Text="{Binding NewScopeName, UpdateSourceTrigger=PropertyChanged}"/>
+                        </StackPanel>
+                        <Button Grid.Column="2" Content="{DynamicResource BtnAdd}" Style="{StaticResource PrimaryButtonStyle}" Margin="10,20,0,0" Height="30" Command="{Binding AddScopeCommand}"/>
+                    </Grid>
+                    <Border Grid.Row="1" Background="White" BorderBrush="#DDDDDD" BorderThickness="1" CornerRadius="4">
+                        <DataGrid ItemsSource="{Binding Scopes}" AutoGenerateColumns="False" CanUserAddRows="False" BorderThickness="0" SelectionMode="Single" RowHeaderWidth="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="{DynamicResource HeaderScopeIp}" Binding="{Binding ScopeId}" Width="120"/>
+                                <DataGridTextColumn Header="{DynamicResource HeaderUnit}" Binding="{Binding Name}" Width="*"/>
+                                <DataGridTemplateColumn Width="40">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Content="❌" Background="Transparent" BorderThickness="0" Foreground="Red" Cursor="Hand" 
+                                                    Command="{Binding DataContext.DeleteScopeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            
+            <TabItem Header="{DynamicResource TabLanguage}">
+                <StackPanel Margin="0,15,0,0">
+                    <TextBlock Text="{DynamicResource LanguageLabel}" Style="{StaticResource LabelStyle}" Margin="0,0,0,10"/>
+                    <ComboBox Height="35" SelectedValuePath="Tag" SelectedValue="{Binding SelectedLanguage}">
+                        <ComboBoxItem Content="{DynamicResource LanguageAuto}" Tag="auto"/>
+                        <ComboBoxItem Content="English" Tag="en-US"/>
+                        <ComboBoxItem Content="Português" Tag="pt-BR"/>
+                        <ComboBoxItem Content="Español" Tag="es-ES"/>
+                    </ComboBox>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+            <Button Content="{DynamicResource BtnCancel}" Style="{StaticResource SecondaryButtonStyle}" Margin="0,0,10,0" Click="BtnCancel_Click"/>
+            <Button Content="{DynamicResource BtnSave}" Style="{StaticResource PrimaryButtonStyle}" Click="BtnSave_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

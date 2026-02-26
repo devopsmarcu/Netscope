@@ -1,28 +1,31 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text.Json;
 using NetScope.Models;
 
 namespace NetScope.Services
 {
     public class DatabaseService
     {
-        private readonly string _dbPath;
+        private readonly StorageService _storageService;
         private AppData _data;
 
         public DatabaseService()
         {
-            string appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            _dbPath = Path.Combine(appDirectory, "database.json");
-            _data = new AppData();
-            Load();
+            _storageService = new StorageService();
+            _data = _storageService.Load();
         }
 
         public List<DhcpServer> GetServers() => _data.Servers;
         public List<MacFilterPolicy> GetPolicies() => _data.Policies;
         public List<DhcpScope> GetScopes() => _data.Scopes;
+        public Settings GetSettings() => _data.Settings;
+
+        public void SaveSettings(Settings settings)
+        {
+            _data.Settings = settings;
+            Save();
+        }
 
         public void SaveServer(DhcpServer server)
         {
@@ -112,40 +115,17 @@ namespace NetScope.Services
             Save();
         }
 
-        private void Load()
-        {
-            try
-            {
-                if (File.Exists(_dbPath))
-                {
-                    string json = File.ReadAllText(_dbPath);
-                    _data = JsonSerializer.Deserialize<AppData>(json) ?? new AppData();
-                }
-            }
-            catch
-            {
-                _data = new AppData();
-            }
-        }
-
         private void Save()
         {
             try
             {
-                string json = JsonSerializer.Serialize(_data, new JsonSerializerOptions { WriteIndented = true });
-                File.WriteAllText(_dbPath, json);
+                _storageService.Save(_data);
             }
             catch (Exception ex)
             {
-                throw new Exception($"Erro ao salvar banco de dados: {ex.Message}");
+                LoggerService.LogError("Database save failed", ex);
+                throw;
             }
-        }
-
-        private class AppData
-        {
-            public List<DhcpServer> Servers { get; set; } = new List<DhcpServer>();
-            public List<MacFilterPolicy> Policies { get; set; } = new List<MacFilterPolicy>();
-            public List<DhcpScope> Scopes { get; set; } = new List<DhcpScope>();
         }
     }
 }

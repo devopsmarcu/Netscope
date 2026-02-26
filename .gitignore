@@ -40,6 +40,8 @@ ScaffoldingReadMe.txt
 ~$*
 *~
 CodeCoverage/
+database.json
+Installer/*.exe
 
 # MSBuild Binary and Structured Log
 *.binlog

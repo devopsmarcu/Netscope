@@ -1,0 +1,77 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Menu -->
+    <system:String x:Key="MenuFile">File</system:String>
+    <system:String x:Key="MenuSettings">Settings...</system:String>
+    <system:String x:Key="MenuExit">Exit</system:String>
+    <system:String x:Key="MenuHelp">Help</system:String>
+    <system:String x:Key="MenuAbout">About...</system:String>
+
+    <!-- Header -->
+    <system:String x:Key="AppTitle">DHCP Lease Query</system:String>
+    <system:String x:Key="AppSubtitle">Multi-server DHCP search system</system:String>
+
+    <!-- Search Panel -->
+    <system:String x:Key="SearchType">Search Type:</system:String>
+    <system:String x:Key="SearchValue">Search Value:</system:String>
+    <system:String x:Key="SearchTooltip">Press Enter to search</system:String>
+    <system:String x:Key="SearchTypeMac">🔖 MAC Address</system:String>
+    <system:String x:Key="SearchTypeIp">🌐 IP Address</system:String>
+    <system:String x:Key="SearchTypeHostname">💻 Host Name</system:String>
+    <system:String x:Key="SearchTypeDescription">📝 Description</system:String>
+
+    <!-- Examples -->
+    <system:String x:Key="SearchExamplesTitle">💡 Search examples:</system:String>
+    <system:String x:Key="SearchExampleMac">MAC: 00-17-c8-a4-f8-4c or 0017c8a4f84c</system:String>
+    <system:String x:Key="SearchExampleIp">IP: 192.168.1.100</system:String>
+    <system:String x:Key="SearchExampleHostname">Hostname: WS-EXAMPLE-01 or workstation (partial)</system:String>
+    <system:String x:Key="SearchExampleDescription">Description: any text from description (partial)</system:String>
+
+    <!-- Buttons -->
+    <system:String x:Key="BtnSearch">🔍 Search</system:String>
+    <system:String x:Key="BtnStartWOL">⚡ Start</system:String>
+    <system:String x:Key="BtnSave">Save Settings</system:String>
+    <system:String x:Key="BtnCancel">Cancel</system:String>
+    <system:String x:Key="BtnAdd">Add</system:String>
+
+    <!-- Results -->
+    <system:String x:Key="ResultsTitle">📋 Search Results</system:String>
+    <system:String x:Key="ResultsWaiting">Waiting for search...</system:String>
+    <system:String x:Key="ResultsSearching">Searching...</system:String>
+    
+    <!-- Footer -->
+    <system:String x:Key="FooterMonitoredServers">Monitored servers: {0}</system:String>
+    <system:String x:Key="FooterLoading">Loading...</system:String>
+
+    <!-- Settings Window -->
+    <system:String x:Key="SettingsTitle">System Settings</system:String>
+    <system:String x:Key="TabServers">DHCP Servers</system:String>
+    <system:String x:Key="TabPolicies">Filter Policies</system:String>
+    <system:String x:Key="TabScopes">Scopes</system:String>
+    <system:String x:Key="TabLanguage">Language</system:String>
+    <system:String x:Key="NewServerLabel">New Server (IP or Hostname):</system:String>
+    <system:String x:Key="NewPolicyLabel">Policy Name (ex: MAC FILTER):</system:String>
+    <system:String x:Key="NewScopeIpLabel">Scope IP:</system:String>
+    <system:String x:Key="NewScopeNameLabel">Name/Unit:</system:String>
+    <system:String x:Key="LanguageLabel">Interface Language:</system:String>
+    <system:String x:Key="LanguageAuto">Automatic (System Default)</system:String>
+    
+    <!-- Grid Headers -->
+    <system:String x:Key="HeaderAddress">Address</system:String>
+    <system:String x:Key="HeaderActive">Active</system:String>
+    <system:String x:Key="HeaderName">Name</system:String>
+    <system:String x:Key="HeaderScopeIp">Scope IP</system:String>
+    <system:String x:Key="HeaderUnit">Name / Unit</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="MsgSuccessSave">Settings updated successfully!</system:String>
+    <system:String x:Key="MsgErrorSave">Error saving settings: {0}</system:String>
+    <system:String x:Key="MsgErrorInterface">Error initializing interface: {0}</system:String>
+    <system:String x:Key="MsgEnterValue">Please enter a search value.</system:String>
+    <system:String x:Key="MsgServerExists">This server is already in the list.</system:String>
+    <system:String x:Key="MsgPolicyExists">This policy is already in the list.</system:String>
+    <system:String x:Key="MsgScopeExists">This scope is already in the list.</system:String>
+
+</ResourceDictionary>

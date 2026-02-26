@@ -9,11 +9,18 @@
     <AssemblyName>NetScope</AssemblyName>
     <RootNamespace>NetScope</RootNamespace>
     <ApplicationIcon>ico-f.ico</ApplicationIcon>
+    
+    <Company>Marcus Santos</Company>
+    <Product>NetScope</Product>
+    <Description>DHCP management tool for Windows Server environments</Description>
+    <Copyright>Copyright © 2026 Marcus Santos</Copyright>
+    <PackageProjectUrl>https://github.com/devopsmarcu/Netscope</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
+
     <Resource Include="ico-f.ico" />
-    <None Update="CheckMacPolicy.ps1">
+    <None Update="Resources\Scripts\*.ps1">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,77 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Menu -->
+    <system:String x:Key="MenuFile">Arquivo</system:String>
+    <system:String x:Key="MenuSettings">Configurações...</system:String>
+    <system:String x:Key="MenuExit">Sair</system:String>
+    <system:String x:Key="MenuHelp">Ajuda</system:String>
+    <system:String x:Key="MenuAbout">Sobre...</system:String>
+
+    <!-- Header -->
+    <system:String x:Key="AppTitle">Consulta de Leases DHCP</system:String>
+    <system:String x:Key="AppSubtitle">Sistema de busca em múltiplos servidores DHCP</system:String>
+
+    <!-- Search Panel -->
+    <system:String x:Key="SearchType">Tipo de Pesquisa:</system:String>
+    <system:String x:Key="SearchValue">Valor para busca:</system:String>
+    <system:String x:Key="SearchTooltip">Pressione Enter para pesquisar</system:String>
+    <system:String x:Key="SearchTypeMac">🔖 MAC Address</system:String>
+    <system:String x:Key="SearchTypeIp">🌐 IP Address</system:String>
+    <system:String x:Key="SearchTypeHostname">💻 Host Name</system:String>
+    <system:String x:Key="SearchTypeDescription">📝 Descrição</system:String>
+
+    <!-- Examples -->
+    <system:String x:Key="SearchExamplesTitle">💡 Exemplos de pesquisa:</system:String>
+    <system:String x:Key="SearchExampleMac">MAC: 00-17-c8-a4-f8-4c ou 0017c8a4f84c</system:String>
+    <system:String x:Key="SearchExampleIp">IP: 192.168.1.100</system:String>
+    <system:String x:Key="SearchExampleHostname">Hostname: WS-EXAMPLE-01 ou workstation (busca parcial)</system:String>
+    <system:String x:Key="SearchExampleDescription">Descrição: qualquer texto da descrição (busca parcial)</system:String>
+
+    <!-- Buttons -->
+    <system:String x:Key="BtnSearch">🔍 Pesquisar</system:String>
+    <system:String x:Key="BtnStartWOL">⚡ Iniciar</system:String>
+    <system:String x:Key="BtnSave">Salvar Configurações</system:String>
+    <system:String x:Key="BtnCancel">Cancelar</system:String>
+    <system:String x:Key="BtnAdd">Adicionar</system:String>
+
+    <!-- Results -->
+    <system:String x:Key="ResultsTitle">📋 Resultados da Pesquisa</system:String>
+    <system:String x:Key="ResultsWaiting">Aguardando pesquisa...</system:String>
+    <system:String x:Key="ResultsSearching">Consultando...</system:String>
+    
+    <!-- Footer -->
+    <system:String x:Key="FooterMonitoredServers">Servidores monitorados: {0}</system:String>
+    <system:String x:Key="FooterLoading">Carregando...</system:String>
+
+    <!-- Settings Window -->
+    <system:String x:Key="SettingsTitle">Configurações do Sistema</system:String>
+    <system:String x:Key="TabServers">Servidores DHCP</system:String>
+    <system:String x:Key="TabPolicies">Políticas de Filtro</system:String>
+    <system:String x:Key="TabScopes">Escopos</system:String>
+    <system:String x:Key="TabLanguage">Idioma</system:String>
+    <system:String x:Key="NewServerLabel">Novo Servidor (IP ou Hostname):</system:String>
+    <system:String x:Key="NewPolicyLabel">Nome da Política (ex: FILTRO DE MACS):</system:String>
+    <system:String x:Key="NewScopeIpLabel">IP do Escopo:</system:String>
+    <system:String x:Key="NewScopeNameLabel">Nome/Unidade:</system:String>
+    <system:String x:Key="LanguageLabel">Idioma da Interface:</system:String>
+    <system:String x:Key="LanguageAuto">Automático (Padrão do Sistema)</system:String>
+    
+    <!-- Grid Headers -->
+    <system:String x:Key="HeaderAddress">Endereço</system:String>
+    <system:String x:Key="HeaderActive">Ativo</system:String>
+    <system:String x:Key="HeaderName">Nome</system:String>
+    <system:String x:Key="HeaderScopeIp">IP do Escopo</system:String>
+    <system:String x:Key="HeaderUnit">Nome / Unidade</system:String>
+
+    <!-- Messages -->
+    <system:String x:Key="MsgSuccessSave">Configurações atualizadas com sucesso!</system:String>
+    <system:String x:Key="MsgErrorSave">Erro ao salvar configurações: {0}</system:String>
+    <system:String x:Key="MsgErrorInterface">Erro ao inicializar interface: {0}</system:String>
+    <system:String x:Key="MsgEnterValue">Por favor, digite um valor para busca.</system:String>
+    <system:String x:Key="MsgServerExists">Este servidor já está na lista.</system:String>
+    <system:String x:Key="MsgPolicyExists">Esta política já está na lista.</system:String>
+    <system:String x:Key="MsgScopeExists">Este escopo já está na lista.</system:String>
+
+</ResourceDictionary>

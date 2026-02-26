@@ -1,0 +1,28 @@
+{
+  "Servers": [
+    {
+      "Id": 1,
+      "Name": "Servidor DHCP Exemplo 01",
+      "Address": "srv-dhcp-01.empresa.local",
+      "Description": "Servidor de Produção",
+      "IsActive": true
+    }
+  ],
+  "Policies": [
+    {
+      "Id": 1,
+      "Name": "FILTRO DE MACS",
+      "Description": "Política de controle de acesso via MAC",
+      "IsActive": true
+    }
+  ],
+  "Scopes": [
+    {
+      "Id": 1,
+      "ScopeId": "192.168.1.0",
+      "Name": "Escritório Central",
+      "ServerAddress": "srv-dhcp-01.empresa.local",
+      "Description": "Rede de Usuários"
+    }
+  ]
+}
