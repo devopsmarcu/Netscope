@@ -1,0 +1,15 @@
+TERMOS DE USO E LICENÇA - NETSCOPE
+
+Este software é de uso exclusivo da Santa Casa da Bahia.
+
+1. LICENÇA
+O NetScope é licenciado para uso interno pelo setor de TI da Santa Casa da Bahia.
+
+2. RESTRIÇÕES
+É proibida a redistribuição, engenharia reversa ou venda deste software sem autorização expressa.
+
+3. ISENÇÃO DE RESPONSABILIDADE
+O software é fornecido "como está", sem garantias de qualquer tipo. O desenvolvedor não se responsabiliza por danos decorrentes do uso inadequado da ferramenta.
+
+Santa Casa da Bahia - TI
+2026
